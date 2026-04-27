@@ -26,13 +26,19 @@ public class ejercicioAd2_3 extends JFrame {
                 int c4 = (num / 10) % 10;
                 int c5 = num % 10;
                 resultLabel.setText( "Las Cifras de "+ num +" son: ");
-                resultLabel.setText(c1);
-                resultLabel.setText(c1 + c2);
-                resultLabel.setText(c1 + c2 + c3);
-                resultLabel.setText(c1 + c2 + c3 + c4);
-                resultLabel.setText(c1 + c2 + c3 + c4 + c5);
+                resultLabel1.setText(c1);
+                resultLabel2.setText(c1 + c2);
+                resultLabel3.setText(c1 + c2 + c3);
+                resultLabel4.setText(c1 + c2 + c3 + c4);
+                resultLabel5.setText(c1 + c2 + c3 + c4 + c5);
             } catch (NumberFormatException ex) {
+                resultLabel.setText("Entrada invalida. Introduce un numero");
                 resultLabel1.setText("Entrada invalida. Introduce un numero");
+                resultLabel2.setText("Entrada invalida. Introduce un numero");
+                resultLabel3.setText("Entrada invalida. Introduce un numero");
+                resultLabel4.setText("Entrada invalida. Introduce un numero");
+                resultLabel5.setText("Entrada invalida. Introduce un numero");
+
             }
         });
 
@@ -41,6 +47,12 @@ public class ejercicioAd2_3 extends JFrame {
         panel.add(inputField);
         panel.add(submitButton);
         panel.add(resultLabel);
+        panel.add(resultLabel1);
+        panel.add(resultLabel2);
+        panel.add(resultLabel3);
+        panel.add(resultLabel4);
+        panel.add(resultLabel5);
+
 
         add(panel);
         setSize(600, 100);
@@ -54,4 +66,5 @@ public class ejercicioAd2_3 extends JFrame {
         });
     }
 }
+    
     
