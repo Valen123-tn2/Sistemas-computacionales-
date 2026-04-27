@@ -20,7 +20,7 @@ public class ejercicioAd2_1 extends JFrame {
                 double la2 = Double.parseDouble(inputField.getText());
                 double la3 = Double.parseDouble(inputField.getText());
                 double p = (la1 + la2 + la3)/2;
-                double area = math.sqrt(p*(p-a)*(p-b)*(p-c));
+                double area = math.sqrt(p*(p-la1)*(p-la2)*(p-la3));
                 resultLabel.setText( "El Area del Triangulo es: " + area);
             } catch (NumberFormatException ex) {
                 resultLabel.setText("Entrada invalida. Introduce un numero");
