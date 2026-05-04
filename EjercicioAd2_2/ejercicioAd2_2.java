@@ -18,7 +18,7 @@ public class ejercicioAd2_2 extends JFrame {
                 int c1 = num/100;
                 int c2 = (num/10)%10;
                 int c3 = num%10;
-                resultLabel.setText( "Las Cifras de "+ num +" son: "+ c1 + "" + c2 + "" + c3);
+                resultLabel.setText( "Las Cifras de "+ num +" son: "+ c1 + "," + c2 + "," + c3);
             } catch (NumberFormatException ex) {
                 resultLabel.setText("Entrada invalida. Introduce un numero");
             }
