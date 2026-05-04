@@ -16,9 +16,9 @@ public class ejercicioAd2_1 extends JFrame {
 
         submitButton.addActionListener(e -> {
             try {
-                double la1 = Double.parseDouble(inputField.getText());
-                double la2 = Double.parseDouble(inputField.getText());
-                double la3 = Double.parseDouble(inputField.getText());
+                double la1 = Double.parseDouble(l1.getText());
+                double la2 = Double.parseDouble(l2.getText());
+                double la3 = Double.parseDouble(l3.getText());
                 double p = (la1 + la2 + la3)/2;
                 double area = math.sqrt(p*(p-la1)*(p-la2)*(p-la3));
                 resultLabel.setText( "El Area del Triangulo es: " + area);
