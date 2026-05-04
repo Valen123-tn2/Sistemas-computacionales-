@@ -1,11 +1,48 @@
 package ejercicio1_4;
+import javax.swing.*;
 
-public class Ejercicio1_4 {
+public class Ejercicio1_4 extends JFrame {
+
+    public Ejercicio1_4() {
+        setTitle("Ejercicios 1.4");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JTextField n1 = new JTextField(10);
+        JButton submitButton = new JButton("Enviar");
+        JLabel resultLabel = new JLabel("");
+
+        submitButton.addActionListener(e -> {
+            try {
+                short num = Short.parseShort(n1.getText());
+
+                resultLabel.setText("Ingresado: " + num);
+
+                System.out.println("Valor máximo para short: " + Short.MAX_VALUE);
+                System.out.println("Valor mínimo para short: " + Short.MIN_VALUE);
+
+                num++;
+                System.out.println("Después de incrementar: " + num);
+
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Entrada inválida. Introduce un número");
+            }
+        });
+
+        JPanel panel = new JPanel();
+        panel.add(new JLabel("Escriba un Numero: "));
+        panel.add(n1);
+        panel.add(submitButton);
+        panel.add(resultLabel);
+
+        add(panel);
+        setSize(600, 100);
+        setLocationRelativeTo(null);
+    }
+
     public static void main(String[] args) {
-    short num; 
-    num = 32767;
-    System.out.println("Valor maximo para el tipo short: " + num);
-    num ++;
-    System.out.println("Valor minimo para el tipo short: " + num);
+        SwingUtilities.invokeLater(() -> {
+            Ejercicio1_4 ejercicio = new Ejercicio1_4();
+            ejercicio.setVisible(true);
+        });
     }
 }
