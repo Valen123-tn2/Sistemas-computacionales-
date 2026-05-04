@@ -26,11 +26,11 @@ public class ejercicioAd2_3 extends JFrame {
                 int c4 = (num / 10) % 10;
                 int c5 = num % 10;
                 resultLabel.setText( "Las Cifras de "+ num +" son: ");
-                resultLabel1.setText(c1);
-                resultLabel2.setText(c1 + c2);
-                resultLabel3.setText(c1 + c2 + c3);
-                resultLabel4.setText(c1 + c2 + c3 + c4);
-                resultLabel5.setText(c1 + c2 + c3 + c4 + c5);
+                resultLabel1.setText("" + c1);
+                resultLabel2.setText("" + c1 + c2);
+                resultLabel3.setText("" + c1 + c2 + c3);
+                resultLabel4.setText("" + c1 + c2 + c3 + c4);
+                resultLabel5.setText("" + c1 + c2 + c3 + c4 + c5);
             } catch (NumberFormatException ex) {
                 resultLabel.setText("Entrada invalida. Introduce un numero");
                 resultLabel1.setText("Entrada invalida. Introduce un numero");
