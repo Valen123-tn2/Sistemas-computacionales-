@@ -16,9 +16,9 @@ public class ejercicioAd2_4 extends JFrame {
 
         submitButton.addActionListener(e -> {
             try {
-                int dia = Integer.parseInt(inputField.getText());
-                int mes = Integer.parseInt(inputField.getText());
-                int año = Integer.parseInt(inputField.getText());
+                int dia = Integer.parseInt(d.getText());
+                int mes = Integer.parseInt(m.getText());
+                int año = Integer.parseInt(a.getText());
                 int nac = dia + mes + año;
                 int c1 = (nac / 1000) % 10;
                 int c2 = (nac / 100) % 10;
@@ -42,7 +42,7 @@ public class ejercicioAd2_4 extends JFrame {
         panel.add(resultLabel);
 
         add(panel);
-        setSize(600, 100);
+        setSize(600, 150);
         setLocationRelativeTo(null);
     }
 
