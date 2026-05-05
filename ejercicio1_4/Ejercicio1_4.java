@@ -10,6 +10,9 @@ public class Ejercicio1_4 extends JFrame {
         JTextField n1 = new JTextField(10);
         JButton submitButton = new JButton("Enviar");
         JLabel resultLabel = new JLabel("");
+        JLabel resultLabel1 = new JLabel("");
+        JLabel resultLabel2 = new JLabel("");
+        JLabel resultLabel3 = new JLabel("");
 
         submitButton.addActionListener(e -> {
             try {
@@ -17,11 +20,11 @@ public class Ejercicio1_4 extends JFrame {
 
                 resultLabel.setText("Ingresado: " + num);
 
-                System.out.println("Valor máximo para short: " + Short.MAX_VALUE);
-                System.out.println("Valor mínimo para short: " + Short.MIN_VALUE);
+                resultLabel1.setText("Valor máximo para short: " + Short.MAX_VALUE);
+                resultLabel2.setText("Valor mínimo para short: " + Short.MIN_VALUE);
 
                 num++;
-                System.out.println("Después de incrementar: " + num);
+                resultLabel3.setText("Después de incrementar: " + num);
 
             } catch (NumberFormatException ex) {
                 resultLabel.setText("Entrada inválida. Introduce un número");
@@ -33,6 +36,10 @@ public class Ejercicio1_4 extends JFrame {
         panel.add(n1);
         panel.add(submitButton);
         panel.add(resultLabel);
+        panel.add(resultLabel1);
+        panel.add(resultLabel2);
+        panel.add(resultLabel3);
+
 
         add(panel);
         setSize(600, 100);
