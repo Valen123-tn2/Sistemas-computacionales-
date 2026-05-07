@@ -27,7 +27,7 @@ public class InterfazCap1 extends JFrame {
 
     public InterfazCap1() {
         setTitle("Capitulo 1"); // Se le pone un titulo
-        setLayout(new BorderLayout()); //Se divide la ventana en secciones ara poder modificar las ubicaciones
+        setLayout(new BorderLayout(10,10)); //Se divide la ventana en secciones ara poder modificar las ubicaciones
 
         JPanel panelBotones = new JPanel(new GridLayout(2, 5, 5, 5));  //Se crea un panel para los botones y el texto, se seleccionan la cantidad de filas y columnas, y la separacion que van a tener
         panelBotones.add(btnRedondeo);   //Se añaden los botones a la interfaz
