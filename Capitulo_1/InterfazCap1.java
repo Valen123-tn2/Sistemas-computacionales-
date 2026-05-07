@@ -94,8 +94,8 @@ public class InterfazCap1 extends JFrame {
 
         setSize(600, 200);  //se decide el tamaño de la interfaz
         setLocationRelativeTo(null); //Donde va a ir ubicada la ventana al abrirse
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //que se cierre todo el programa al apretar x 
-        setVisible(true); //que se vea la ventana
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Ordena que se cierre todo el programa al apretar x 
+        setVisible(true); //Permite que se vea la ventana
     }
 
     public static void main(String[] args) {
