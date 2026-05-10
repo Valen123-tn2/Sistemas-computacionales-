@@ -35,9 +35,9 @@ public class ejercicio1_8 extends JFrame {
                 int vp3t = Integer.parseInt(p3t.getText());
                 int vp4t = Integer.parseInt(p4t.getText());
                 double ImpTotal = ((vm1t + vm2t + vm3t + vm4t)* PM) + ((vp1t + vp2t + vp3t + vp4t)* PP);
-                resultLabel.setText("El importe total es de: " + ImpTotal + "Pesos");
+                resultados.setText("El importe total es de: " + ImpTotal + "Pesos");
             } catch (NumberFormatException ex) {
-                resultLabel.setText("Entrada invalida. Introduce un numero");
+                resultados.setText("Entrada invalida. Introduce un numero");
             }
         });
 
