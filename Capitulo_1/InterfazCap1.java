@@ -23,9 +23,9 @@ public class InterfazCap1 extends JFrame {
     JButton btnTemperatura = new JButton("Celsius a Fahrenheit");
     JButton btnVelocidad = new JButton("Km/h a m/s");
     JButton btnHipotenusa = new JButton("Hipotenusa");
-    JButton btnAreaT = new JButton("Área Triángulo");
+    JButton btnAreaT = new JButton("Área de un Triángulo");
     JButton btnDescomponer = new JButton("Descomponer Número");
-    JButton btnNSuerte = new JButton("Número Suerte");
+    JButton btnNSuerte = new JButton("Número de la Suerte");
 
     public InterfazCap1() {
         setTitle("Capitulo 1"); // Se le pone un titulo
