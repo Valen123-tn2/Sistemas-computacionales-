@@ -21,6 +21,7 @@ public class ejercicio1_9 extends JFrame {
         JTextField p4t = new JTextField(10);
         JButton submitButton = new JButton("Enviar");
         JLabel resultLabel = new JLabel("");
+        JTextField resultados = new JTextField(10);
 
 
         submitButton.addActionListener(e -> {
@@ -63,7 +64,7 @@ public class ejercicio1_9 extends JFrame {
         panelManzanas.add(m4t);
        
         JPanel panelPeras = new JPanel(new GridLayout(5, 2, 5, 5));
-         panelPeras.setBorder(BorderFactory.createTitledBorder("Peras"));
+        panelPeras.setBorder(BorderFactory.createTitledBorder("Peras"));
         panelPeras.add(new JLabel("Venta Primer trimestre: "));
         panelPeras.add(p1t);
         panelPeras.add(new JLabel("Venta Segundo trimestre: "));
@@ -83,7 +84,9 @@ public class ejercicio1_9 extends JFrame {
         add(panelBoton, BorderLayout.NORTH);
 
         JPanel panelResultado = new JPanel();
+        panelResultado.setBorder(BorderFactory.createTitledBorder("Resultado"));
         panelResultado.add(resultLabel);
+        panelResultado.add(resultados);
         add(panelResultado, BorderLayout.SOUTH);
 
         setSize(1400, 300);

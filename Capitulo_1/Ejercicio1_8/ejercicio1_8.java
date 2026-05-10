@@ -19,6 +19,7 @@ public class ejercicio1_8 extends JFrame {
         JTextField p4t = new JTextField(10);
         JButton submitButton = new JButton("Enviar");
         JLabel resultLabel = new JLabel("");
+        JTextField resultados = new JTextField(10);
 
 
         submitButton.addActionListener(e -> {
@@ -73,7 +74,9 @@ public class ejercicio1_8 extends JFrame {
         add(panelBoton, BorderLayout.NORTH);
 
         JPanel panelResultado = new JPanel();
+        panelResultado.setBorder(BorderFactory.createTitledBorder("Resultado"));
         panelResultado.add(resultLabel);
+        panelResultado.add(resultados);
         add(panelResultado, BorderLayout.SOUTH);
 
         setSize(600, 300);
