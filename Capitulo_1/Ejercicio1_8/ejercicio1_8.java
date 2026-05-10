@@ -19,7 +19,7 @@ public class ejercicio1_8 extends JFrame {
         JTextField p4t = new JTextField(10);
         JButton submitButton = new JButton("Enviar");
         JLabel resultLabel = new JLabel("");
-        JTextField resultados = new JTextField(10);
+        JTextField resultados = new JTextField(40);
 
 
         submitButton.addActionListener(e -> {
@@ -35,7 +35,7 @@ public class ejercicio1_8 extends JFrame {
                 int vp3t = Integer.parseInt(p3t.getText());
                 int vp4t = Integer.parseInt(p4t.getText());
                 double ImpTotal = ((vm1t + vm2t + vm3t + vm4t)* PM) + ((vp1t + vp2t + vp3t + vp4t)* PP);
-                resultados.setText("El importe total es de: " + ImpTotal + "Pesos");
+                resultados.setText("El importe total es de: " + ImpTotal + " Pesos");
             } catch (NumberFormatException ex) {
                 resultados.setText("Entrada invalida. Introduce un numero");
             }
