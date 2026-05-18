@@ -19,8 +19,9 @@ public class ejercicio3_1 extends JFrame {
                     boolean positivo =  num >= 0 ? true : false;
                     resultLabel.setText("Es Par?: "+par+" Es Positivo?: "+positivo+" Su Cuadrado es: "+ num*num);
                     num = Integer.parseInt(n.getText());  
+                    n.setText("");
+                    break;
                 }
-                
                
             } catch (NumberFormatException ex) {
                 resultLabel.setText("Entrada invalida. Introduce un numero");
