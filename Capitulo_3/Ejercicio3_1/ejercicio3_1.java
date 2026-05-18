@@ -11,15 +11,17 @@ public class ejercicio3_1 extends JFrame {
         JButton submitButton = new JButton("Enviar");
         JLabel resultLabel = new JLabel("");
 
-
         submitButton.addActionListener(e -> {
             try {
                 int num = Integer.parseInt(n.getText());
                 while (num != 0) {
                     boolean par = num % 2 == 0 ? true : false;
-                    boolean positivo =  num >= 0 ? true : false; 
-                    resultLabel.setText("Es par?: "+par+"Es positivo?: "+positivo);
+                    boolean positivo =  num >= 0 ? true : false;
+                    resultLabel.setText("Es Par?: "+par+" Es Positivo?: "+positivo+" Su Cuadrado es: "+ num*num);
+                    num = Integer.parseInt(n.getText());  
                 }
+                
+               
             } catch (NumberFormatException ex) {
                 resultLabel.setText("Entrada invalida. Introduce un numero");
             }
