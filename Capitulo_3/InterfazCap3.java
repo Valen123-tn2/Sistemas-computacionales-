@@ -6,7 +6,6 @@ public class InterfazCap3 extends JFrame {
     JTextField Numero1 = new JTextField();
     JTextField Numero2 = new JTextField();
     JTextField Numero3 = new JTextField();
-    JTextField Datos = new JTextField();
     JTextArea Resultado = new JTextArea();
 
     JButton btn31 = new JButton("Ejercicio 3.1");
@@ -56,8 +55,6 @@ public class InterfazCap3 extends JFrame {
         panelSuperior.add(Numero2);
         panelSuperior.add(new JLabel("Número 3:"));
         panelSuperior.add(Numero3);
-        panelSuperior.add(new JLabel("Datos:"));
-        panelSuperior.add(Datos);
 
         JPanel panelBotones = new JPanel(new GridLayout(5,3,5,5));
         panelBotones.setBorder(BorderFactory.createTitledBorder("Ejercicios"));
