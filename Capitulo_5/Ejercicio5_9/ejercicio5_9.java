@@ -74,7 +74,7 @@ public class ejercicio5_9 extends JFrame {
 
         JPanel panel = new JPanel();
 
-        panel.add(new JLabel("Numeros: "));
+        panel.add(new JLabel("Nota: "));
         panel.add(inputField);
         panel.add(submitButton);
         panel.add(resultLabel);
@@ -90,14 +90,6 @@ public class ejercicio5_9 extends JFrame {
             suma += trimestre[i];
         }
         return (double) suma / 5;
-    }
-
-    public String mostrar(int[] t, int cantidad) {
-        String texto = "";
-        for (int i = 0; i < cantidad; i++) {
-            texto += t[i] + " ";
-        }
-        return texto;
     }
     public static void main(String[] args) {
 
