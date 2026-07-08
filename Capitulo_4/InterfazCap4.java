@@ -7,8 +7,7 @@ public class InterfazCap4 extends JFrame {
     JTextField Numero2 = new JTextField();
     JTextField Numero3 = new JTextField();
     JTextField Caracter = new JTextField();
-
-    JTextArea Resultado = new JTextArea();
+    JTextArea Resultado = new JTextArea(10,10);
 
     JButton btn41 = new JButton("Ejercicio 4.1");
     JButton btn42 = new JButton("Ejercicio 4.2");
@@ -79,128 +78,119 @@ public class InterfazCap4 extends JFrame {
         setVisible(true);
     }
 
-    public static void eco(int a) {
-        Resultado.setText("");
-        for (int i = 0; i < a; i++) {
-           Resultado.append("Eco...\n");
+    private void ejercicio4_1() {
+        try {
+            int n = Integer.parseInt(Numero1.getText());
+            eco(n);
+
+        } catch (NumberFormatException ex) {
+            Resultado.setText("Entrada inválida.");
         }
     }
 
-    public static void mostrar(int a, int b) {
+    private void eco(int n) {
+        Resultado.setText("");
+        for (int i = 0; i < n; i++) {
+            Resultado.append("Eco...\n");
+        }
+    }
+
+    private void ejercicio4_2() {
+        try {
+            int a = Integer.parseInt(Numero1.getText());
+            int b = Integer.parseInt(Numero2.getText());
+            mostrar(a, b);
+
+        } catch (NumberFormatException ex) {
+            Resultado.setText("Entrada inválida.");
+        }
+    }
+
+    private void mostrar(int a, int b) {
         Resultado.setText("");
         int menor = Math.min(a, b);
         int mayor = Math.max(a, b);
         for (int i = menor; i <= mayor; i++) {
-           Resultado.append(i + " ");
-        }
-    }
-    private void ejercicio4_1(){
-        try {
-            int n = Integer.parseInt(Numero1.getText());
-            eco(n);
-        } catch (NumberFormatException ex) {
-            Resultado.setText("Entrada inválida. Introduce un número");
+            Resultado.append(i + " ");
         }
     }
 
-    private void ejercicio4_2(){
+    private void ejercicio4_3() {
         try {
-            int n1 = Integer.parseInt(Numero1.getText());
-            int n2 = Integer.parseInt(Numero2.getText());
-            mostrar(n1, n2, Resultado);
+            double radio = Double.parseDouble(Numero1.getText());
+            double altura = Double.parseDouble(Numero2.getText());
+            int opcion = Integer.parseInt(Numero3.getText());
+            areaVolumenCilindro(radio, altura, opcion);
 
-            } catch (NumberFormatException ex) {
-                Resultado.setText("Entrada inválida. Introduce números.");
-            }
+        } catch (NumberFormatException ex) {
+            Resultado.setText("Entrada inválida.");
+        }
     }
 
-    private void ejercicio4_3(){
-        try {
-            double rad = Double.parseDouble(Numero1.getText());
-            double alt = Double.parseDouble(Numero2.getText());
-            int tipoc = Integer.parseInt(Numero3.getText());
-            areaVolumencilidro(rad, alt, tipoc, Resultado);
-
-        } catch (NumberFormatException ex) {
-            Resultado.setText("Entrada inválida. Introduce números.");
-        }
-
-        public static void areaVolumencilidro(double radio, double altura, int opcion, JLabel label) {
-            String texto = "";
-            Double volumen, area;
-            switch (opcion) {
-                case 1:
-                    volumen = Math.PI *(radio * radio) * altura;
-                    texto += "El volumen es de: " + volumen;
-                    break;
-                case 2:
-                    area = 2 * Math.PI * radio * (altura+radio);
-                    texto += "El area es de: " + area;
-                    break;
-            }
-            label.setText(texto);
-        } 
-    }  
-
-    private void ejercicio4_4(){
-        try {
-            int num1 = Integer.parseInt(Numero1.getText());
-            int num2 = Integer.parseInt(Numero2.getText());
-            Resultado.setText("El numero mayor es: " + maximo(num1,num2));
-
-        } catch (NumberFormatException ex) {
-            Resultado.setText("Entrada inválida. Introduce números.");
-        }
-
-        public static int maximo(int a, int b) {
-        int max;
-        if (a > b){
-            max = a;
+    private void areaVolumenCilindro(double radio, double altura, int opcion) {
+        if (opcion == 1) {
+            double volumen = Math.PI * radio * radio * altura;
+            Resultado.setText("Volumen = " + volumen);
+        } else if (opcion == 2) {
+            double area = 2 * Math.PI * radio * (radio + altura);
+            Resultado.setText("Área = " + area);
         } else {
-            max = b;
-        }
-       return (max);
+            Resultado.setText("Ingrese 1 para Volumen o 2 para Área.");
         }
     }
 
-    private void ejercicio4_5(){
+    private void ejercicio4_4() {
         try {
-            int num1 = Integer.parseInt(Numero1.getText());
-            int num2 = Integer.parseInt(Numero2.getText());
-            int num3 = Integer.parseInt(Numero3.getText());
-            Resultado.setText("El numero mayor es: " + maximo(num1,num2,num3));
+            int a = Integer.parseInt(Numero1.getText());
+            int b = Integer.parseInt(Numero2.getText());
+            Resultado.setText("El mayor es: " + maximo(a, b));
 
         } catch (NumberFormatException ex) {
-            Resultado.setText("Entrada inválida. Introduce números.");
+            Resultado.setText("Entrada inválida.");
         }
-        public static int maximo(int a, int b, int c) {
-        int max;
-        if (a > b){
-            max = a;
+    }
+
+    private int maximo(int a, int b) {
+        if (a > b) {
+            return a;
+        }
+        return b;
+    }
+
+    private void ejercicio4_5() {
+        try {
+            int a = Integer.parseInt(Numero1.getText());
+            int b = Integer.parseInt(Numero2.getText());
+            int c = Integer.parseInt(Numero3.getText());
+            Resultado.setText("El mayor es: " + maximo(a, b, c));
+
+        } catch (NumberFormatException ex) {
+            Resultado.setText("Entrada inválida.");
+        }
+    }
+
+    private int maximo(int a, int b, int c) {
+        int mayor = maximo(a, b);
+        if (c > mayor) {
+            mayor = c;
+        }
+        return mayor;
+    }
+
+    private void ejercicio4_6() {
+        if (Caracter.getText().isEmpty()) {
+            Resultado.setText("Ingrese un carácter.");
+            return;
+        }
+        char letra = Caracter.getText().charAt(0);
+        if (esVocal(letra)) {
+            Resultado.setText("Es una vocal.");
         } else {
-            max = b;
-        }
-        if (c > max){
-            max = c;
-        }
-        return (max);
+            Resultado.setText("No es una vocal.");
         }
     }
 
-    private void ejercicio4_6(){
-        try {
-            String texto = Numero1.getText();
-            char letra = texto.charAt(0);
-            if (esVocal(letra)){
-                Resultado.setText("Es una vocal");
-            } else {
-                Resultado.setText("No es una vocal");
-            }  
-        } catch (NumberFormatException ex) {
-            Resultado.setText("Entrada inválida. Introduce una sola letra.");
-        }
-
-        public static boolean esVocal(char c) {
+    public boolean esVocal(char c) {
         boolean resultado;
         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || 
         c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U'){
@@ -208,121 +198,76 @@ public class InterfazCap4 extends JFrame {
         } else {
             resultado = false;
         }
-        return (resultado);
-        }
+       return (resultado);
     }
 
-    private void ejercicio4_7(){
+    private void ejercicio4_7() {
         try {
-            int num1 = Integer.parseInt(Numero1.getText());
-            if (esPrimo(num1)){
-                Resultado.setText("El numero es primo");
+            int num = Integer.parseInt(Numero1.getText());
+            if (esPrimo(num)) {
+                Resultado.setText("El número es primo.");
             } else {
-                Resultado.setText("El numero no es primo");
-            }  
+                Resultado.setText("El número no es primo.");
+            }
 
         } catch (NumberFormatException ex) {
-            Resultado.setText("Entrada inválida. Introduce una sola letra.");
+            Resultado.setText("Entrada inválida.");
         }
-        public static boolean esPrimo(int a) {
-        boolean primo = true;
-        int i = 2;
-        if (a < 2){
-            primo = false;
-        } 
-        while (i < a && primo == true){
-            if (a % i == 0){
-                primo = false;
-            }
-            i++;
-        }
-        return (primo);
-        }
-
     }
 
-    private void ejercicio4_8(){
+    private void ejercicio4_8() {
         try {
-            int num1 = Integer.parseInt(Numero1.getText());
-            Resultado.setText("Los divisores primos de "+ num1 + " son: " + numDP(num1));
+            int num = Integer.parseInt(Numero1.getText());
+            Resultado.setText("Cantidad de divisores primos: " + cantidadDivisoresPrimos(num));
+
         } catch (NumberFormatException ex) {
-            Resultado.setText("Entrada inválida. Introduce una sola letra.");
+            Resultado.setText("Entrada inválida.");
         }
-        public static boolean esPrimo(int a) {
-        boolean primo = true;
-        int i = 2;
-        if (a < 2){
-            primo = false;
-        } 
-        while (i < a && primo == true){
-            if (a % i == 0){
-                primo = false;
-            }
-            i++;
-        }
-       return (primo);
     }
-    public static int numDP(int num){
-        int cont;
-        cont = 1;
-        for (int i = 2; i <= num; i++ ){
-            if (esPrimo(i) && num % i == 0){
+
+    private int cantidadDivisoresPrimos(int num) {
+        int cont = 0;
+        for (int i = 2; i <= num; i++) {
+            if (esPrimo(i) && num % i == 0) {
                 cont++;
             }
         }
-        return (cont);
+        return cont;
     }
 
-    }
-
-    private void ejercicio4_9(){
+    private void ejercicio4_9() {
         try {
-            int num = Integer.parseInt(inputField.getText());
-            divisoresPrimosO(num, resultLabel);
-        } catch (NumberFormatException ex) {
-            resultLabel.setText("Entrada inválida. Introduce una sola letra.");
-        }
-         public static boolean esPrimo(int a) {
-        boolean primo = true;
-        int i = 2;
-        if (a < 2){
-            primo = false;
-        } 
-        while (i < a && primo == true){
-            if (a % i == 0){
-                primo = false;
-            }
-            i++;
-        }
-       return (primo);
-    }
-    public static void divisoresPrimosO(int num, JLabel label){
-        String texto = "Los divisores primos de "+ num + " son: ";
-        for (int i = 1; i <= num; i++ ){
-            if (esPrimo(i) && num % i == 0){
-                texto += i + ", ";
-            }
-        }
-        label.setText(texto);  
-    }
-
-    }
-
-    private void ejercicio4_10(){
-         try {
-                int num1 = Integer.parseInt(inputField1.getText());
-                int num2 = Integer.parseInt(inputField2.getText());
-                if (amigos(num1,num2)){
-                    resultLabel.setText(num1 +" y " + num2 + " son amigos");  
-                } else {
-                    resultLabel.setText(num1 +" y " + num2 + " no son amigos");
+            int num = Integer.parseInt(Numero1.getText());
+            Resultado.setText("Divisores primos:\n");
+            for (int i = 2; i <= num; i++) {
+                if (esPrimo(i) && num % i == 0) {
+                    Resultado.append(i + "\n");
                 }
-            } catch (NumberFormatException ex) {
-                resultLabel.setText("Entrada inválida. Introduce numeros validos.");
             }
-            public static boolean amigos(int a, int b){
+
+        } catch (NumberFormatException ex) {
+            Resultado.setText("Entrada inválida.");
+        }
+    }
+
+    private void ejercicio4_10() {
+        try {
+            int a = Integer.parseInt(Numero1.getText());
+            int b = Integer.parseInt(Numero2.getText());
+            if (amigos(a, b)) {
+                Resultado.setText(a + " y " + b + " son amigos.");
+            } else {
+                Resultado.setText(a + " y " + b + " no son amigos.");
+            }
+
+        } catch (NumberFormatException ex) {
+            Resultado.setText("Entrada inválida.");
+        }
+    }
+
+    public boolean amigos(int a, int b){
         boolean amigos;
-        if  (a == sumaDP(b) && b == sumaDP(a)) {
+        if  (a == sumaDivisoresPropios(b) && b == sumaDivisoresPropios(a)) {
             amigos = true;
         } else {
             amigos = false;
@@ -330,42 +275,48 @@ public class InterfazCap4 extends JFrame {
         return (amigos);
     }
 
-    public static int sumaDP(int num){
+    private int sumaDivisoresPropios(int num) {
         int suma = 0;
-        for (int i = 1; i < num; i++){
-            if (num % i == 0){
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
                 suma += i;
             }
         }
-        return (suma);
+        return suma;
     }
 
+    private void ejercicio4_11() {
+        try {
+            double base = Double.parseDouble(Numero1.getText());
+            int exponente = Integer.parseInt(Numero2.getText());
+            Resultado.setText(base + " elevado a " + exponente + " = " +
+                    potencia(base, exponente));
+
+        } catch (NumberFormatException ex) {
+            Resultado.setText("Entrada inválida.");
+        }
     }
 
-    private void ejercicio4_11(){
-         try {
-                double base = Double.parseDouble(inputField1.getText());
-                int exp = Integer.parseInt(inputField2.getText());
-                double res = aElevadoN(base, exp);
-                resultLabel.setText(base + " elevado a " + exp + " = " + res);
-            } catch (NumberFormatException ex) {
-                resultLabel.setText("Entrada inválida. Introduce numeros validos.");
-            }
-            public static double aElevadoN(double a, int n){
-        double res = 1;
-        if (n == 0){
-            res += 1;     
-        } else {
-            for (int i = 1; i <= n; i++){
-                res = res * a;
+    private double potencia(double base, int exponente) {
+        double resultado = 1;
+        for (int i = 0; i < exponente; i++) {
+            resultado *= base;
+        }
+        return resultado;
+    }
+
+    private boolean esPrimo(int num) {
+        if (num < 2) {
+            return false;
+        }
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false;
             }
         }
-        return (res);
+        return true;
     }
-    }
-
     public static void main(String[] args) {
-
-    new InterfazCap4();
+        new InterfazCap4();
     }
 }
