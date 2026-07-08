@@ -408,8 +408,8 @@ public class InterfazCap5 extends JFrame {
     }   
 
     private void ejercicio5_9() {
-        String frase = Palabra.getText().trim();
-        String palabra = Frase.getText().trim();
+        String frase = Frase.getText().trim();
+        String palabra = Palabra.getText().trim();
         if (frase.isEmpty() || palabra.isEmpty()) {
             Resultado.setText("Complete ambos campos.");
             return;
@@ -485,31 +485,30 @@ public class InterfazCap5 extends JFrame {
             Resultado.setText("Entrada inválida.");
         }
     }
-    private void ejercicio5_13(){
+    private void ejercicio5_13() {
         String frase = Frase.getText().trim().toLowerCase();
-            if (frase.isEmpty()) {
-                Resultado.setText("Debe ingresar una frase.");
-                return;
-            }
-            int[] numVeces = new int[26];
+        if (frase.isEmpty()) {
+            Resultado.setText("Debe ingresar una frase.");
+            return;
+        }
+        int[] numVeces = new int[26];
 
-            for (int i = 0; i < frase.length(); i++) {
-                if (Character.isLetter(frase.charAt(i))) {
-                    numVeces[frase.charAt(i) - 'a']++;
-                }
+        for (int i = 0; i < frase.length(); i++) {
+            if (Character.isLetter(frase.charAt(i))) {
+                numVeces[frase.charAt(i) - 'a']++;
             }
-            String resultado = "<html>";
+        }
+        String resultado = "";
 
-            for (int i = 0; i < 26; i++) {
-                if (numVeces[i] != 0) {
-                    resultado += (char)(i + 'a') + ": "
-                            + numVeces[i] + " veces<br>";
-                }
+        for (int i = 0; i < 26; i++) {
+            if (numVeces[i] != 0) {
+                resultado += (char)(i + 'a') + ": "
+                        + numVeces[i] + " veces\n";
             }
-            resultado += "</html>";
-            Resultado.setText(resultado);    
+        }
+        Resultado.setText(resultado);
     }
-
+    
     private void ejercicio5_14(){
         try{
             if(cantidad514<10){
