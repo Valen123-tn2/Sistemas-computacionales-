@@ -60,8 +60,8 @@ public class ejercicio7_9 extends JFrame {
     }
 
     private void actualizar() {
-        lbl1.setText("B1: " + (b1.estaEncendida() ? "ENCENDIDA 💡" : "APAGADA ❌"));
-        lbl2.setText("B2: " + (b2.estaEncendida() ? "ENCENDIDA 💡" : "APAGADA ❌"));
+        lbl1.setText("B1: " + (b1.estaEncendida() ? "Prendida" : "Apagada "));
+        lbl2.setText("B2: " + (b2.estaEncendida() ? "Prendida" : "Apagada "));
     }
 
     public static void main(String[] args) {
