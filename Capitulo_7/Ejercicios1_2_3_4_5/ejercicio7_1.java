@@ -1,4 +1,4 @@
-package Capitulo_7;
+package Capitulo_7.Ejercicios1_2_3_4_5;
 import javax.swing.*;
 import java.awt.*;
 
