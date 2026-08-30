@@ -1,4 +1,5 @@
 package Capitulo_7.Ejercicio7_12;
+import Capitulo_7.Lista;
 import javax.swing.*;
 import java.awt.*;
 
